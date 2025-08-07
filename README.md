@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>رودي - محرك بحث عربي ذكي</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: right;
+            background: #f7f9fc;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 52px;
+            font-weight: bold;
+            color: #007BFF;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+        .logo span {
+            color: #e63946;
+        }
+        .tagline {
+            color: #555;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .search-box {
+            width: 85%;
+            max-width: 650px;
+            padding: 16px 20px;
+            font-size: 18px;
+            border: 2px solid #007BFF;
+            border-radius: 14px;
+            outline: none;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+            transition: all 0.3s;
+        }
+        .search-box:focus {
+            border-color: #0056b3;
+            box-shadow: 0 6px 16px rgba(0, 123, 255, 0.15);
+        }
+        .search-btn {
+            padding: 12px 28px;
+            font-size: 18px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            margin: 15px 10px;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+        .search-btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        .result {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-right: 5px solid #007BFF;
+            transition: transform 0.2s;
+        }
+        .result:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        .result-title {
+            font-size: 21px;
+            color: #007BFF;
+            font-weight: bold;
+            margin: 0;
+        }
+        .result-url {
+            color: #28a745;
+            font-size: 14px;
+            margin: 6px 0;
+            word-break: break-all;
+        }
+        .result-content {
+            color: #333;
+            margin: 10px 0;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            color: #777;
+            font-size: 14px;
+        }
+        footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .search-box {
+                width: 90%;
+            }
+            .search-btn {
+                display: block;
+                margin: 10px auto;
+                width: 90%;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- الرأس -->
+        <header>
+            <h1 class="logo">رودي <span>🔍</span></h1>
+            <p class="tagline">ابحث في المواقع، المنتديات، ووسائل التواصل الاجتماعي بالعربية</p>
+        </header>
+
+        <!-- مربع البحث -->
+        <form method="GET" action="#" onsubmit="alert('هذا نموذج تجريبي. في النسخة الحقيقية، سيتم إرسال البحث إلى الخادم.'); return false;">
+            <input 
+                type="text" 
+                name="q" 
+                class="search-box" 
+                placeholder="ابحث في العالم العربي... مثلاً: وظائف تقنية في السعودية" 
+                autofocus
+            />
+            <br>
+            <button type="submit" class="search-btn">🔎 ابحث مع رودي</button>
+            <button type="reset" class="search-btn" style="background:#6c757d;">🗑 مسح</button>
+        </form>
+
+        <!-- مثال على نتائج البحث -->
+        <div class="result">
+            <h3 class="result-title">وظائف برمجة في الرياض | منتدى وظائف الخليج</h3>
+            <div class="result-url">https://www.wzafa-gulf.com/thread-8821.html</div>
+            <p class="result-content">
+                تم الإعلان عن 5 وظائف في شركة تقنية كبرى بالرياض، تطلب مطورين بايثون وجافاسكريبت. الراتب من 12,000 إلى 20,000 ريال...
+            </p>
+        </div>
+
+        <div class="result">
+            <h3 class="result-title">نصائح للتقديم على وظائف التقنية | فيديو تيليجرام</h3>
+            <div class="result-url">t.me/tech_jobs_ar/145</div>
+            <p class="result-content">
+                فيديو قصير يشرح كيفية كتابة سيرة ذاتية قوية، وإجراء مقابلات عمل بنجاح، من خبير توظيف في شركة عربية كبرى...
+            </p>
+        </div>
+
+        <div class="result">
+            <h3 class="result-title">فرص عمل عن بعد للمبرمجين العرب</h3>
+            <div class="result-url">https://ar.hamarijob.com/remote-jobs</div>
+            <p class="result-content">
+                موقع "هم عمل" يقدّم قائمة محدثة يوميًا بالوظائف المتاحة للعمل عن بعد، تشمل تخصصات تطوير الويب، تحليل البيانات، والذكاء الاصطناعي...
+            </p>
+        </div>
+
+        <!-- تذييل الصفحة -->
+        <footer>
+            <p>رودي © 2025 | محرك بحث عربي ذكي | <a href="mailto:contact@roody164231.com">اتصل بنا</a></p>
+            <p>النتائج مجمعة من مصادر عربية موثوقة | العنوان: <strong>roody164231.com</strong></p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
